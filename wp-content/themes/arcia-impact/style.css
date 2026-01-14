@@ -1,0 +1,192 @@
+/*!
+Theme Name: Arcia Impact
+Theme URI: http://underscores.me/
+Author: Imran Hossain
+Author URI: #
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: arcia-impact
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Arcia Impact is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/* 
+=====================================================================================
+                                Heade Style Start
+=====================================================================================
+*/
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4.875rem;
+    padding-right: 5.625rem;
+}
+.site-branding {
+    width: 5.5rem;
+    height: 4.5625rem;
+}
+
+/* main menu */
+.main-menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    column-gap: 1.6875rem;
+}
+.main-menu ul li {
+    list-style: none;
+}
+.main-menu ul li a {
+	text-decoration: none;
+	padding: 2.375rem 0;
+	display: block;
+	font-weight: 500;
+	line-height: 150%;
+}
+.main-menu ul li a:hover{
+    color: var(--arica-primery);
+}
+
+/* button */
+.header-btn a {
+	text-decoration: none;
+	color: var(--arica-bg);
+    background: var(--arica-primery);
+	padding: .625rem .875rem;
+	display: block;
+	border-radius: 4px;
+}
+.header-btn a:hover {
+	background: var(--arica-navy);
+}
+
+
+/* mobile menu */
+
+.menu-trigger{
+      display: none;
+      z-index: 1000;
+    }
+    .hamburger-menu {
+      display: none;
+      z-index: 999;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #00000080;
+      z-index: 800;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s;
+    }
+
+    .menu-overlay.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+    @media only screen and (max-width: 991px){
+    .header-inner {
+      padding: .6rem 0;
+    }
+    .main-menu,
+    .header-btn{
+        display: none;
+    }
+    .menu-trigger {
+        display: flex;
+        width: 2.5rem; /* 40px */
+        flex-direction: column;
+        gap: 0.3125rem; /* 5px */
+        cursor: pointer;
+    }
+    .menu-trigger span {
+        display: block;
+        height: 0.3125rem; /* 5px */
+        width: 100%;
+        background: var(--arica-navy);
+        transition: 0.3s ease;
+        transform-origin: center;
+    }
+    .hamburger-menu {
+        position: fixed;
+        display: block;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--arica-bg);
+        padding: 2.5rem; /* 40px */
+
+        opacity: 0;
+        visibility: hidden;
+        z-index: 901;
+        transition: right 0.4s ease-in-out, 0.4s ease-in-out;
+
+    }
+
+    /* close icon style */
+    .menu-trigger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-trigger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px) !important;
+    }
+    .menu-trigger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px) !important;
+    }
+    .hamburger-menu.isOpen{
+        opacity: 1;
+        right: 0;
+        visibility: visible;
+        z-index: 999;
+    }
+    
+    .hamburger-menu .mobile-menu ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .hamburger-menu .mobile-menu ul li a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--arica-navy);
+    }
+    .hamburger-menu .social-medias {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      column-gap: .8rem;
+}
+
+
+}
+
+
+@media only screen and (max-width: 992px){
+    .site-header {
+	display: flex;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+}
