@@ -3,6 +3,6 @@
 get_header(); while(have_posts())  : the_post(); ?>
 
 
-<h1 class="layout-padding">May Main Content</h1>
+<h1 class="layout-padding pt-lg-200 pb-lg-200" > This is main content</h1>
 
 <?php get_footer(); endwhile; ?>

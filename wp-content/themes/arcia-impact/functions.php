@@ -121,25 +121,6 @@ function arcia_impact_content_width() {
 }
 add_action( 'after_setup_theme', 'arcia_impact_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function arcia_impact_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'arcia-impact' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'arcia-impact' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'arcia_impact_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -195,3 +176,55 @@ if( function_exists('acf_add_options_page') ) {
 	'parent_slug'  => 'theme-general-settings',
   ));
 }
+
+
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+
+
+function arcia_impact_widgets_init() {
+
+	// footer widgets for link
+	register_sidebar(
+		array(
+			'name'			=> esc_html__('Footer Link','arcia-impact'),
+			'id'			=> 'footer-menu',
+			'description'	=> esc_html__('Footer Link','arcia-impact'),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		)
+	);
+
+	// footer widgets for 
+	register_sidebar(
+		array(
+			'name'			=> esc_html__('Footer Contact','arcia-impact'),
+			'id'			=> 'footer-contact',
+			'description'	=> esc_html__('Footer Contact','arcia-impact'),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		)
+	);
+
+
+
+}
+
+add_action( 'widgets_init', 'arcia_impact_widgets_init');
+
+
+/**
+ * Disable the block widget editor and restore classic widgets
+ */
+function arcia_impactdisable_block_widgets() {
+	remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'arcia_impactdisable_block_widgets' );

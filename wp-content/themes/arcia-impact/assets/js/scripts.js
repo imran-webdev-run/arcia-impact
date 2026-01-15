@@ -3,27 +3,18 @@
 
 // mobile menu
 jQuery(document).ready(function ($) {
-    $('.menu-trigger').on('click', function () {
-        $(this).toggleClass('active');
-        
-        if ($('.hamburger-menu').hasClass('isOpen')) {
-            $('.hamburger-menu').removeClass('isOpen');
-            $('.menu-overlay').removeClass('active');
-        } else {
-            $('.hamburger-menu').addClass('isOpen');
-            $('.menu-overlay').addClass('active');
-        }
-    });
 
-    $('.menu-overlay').on('click', function () {
+    // Hamburger menu
+    $('.menu-trigger').click(function() {
+        $('.hamburger-menu').addClass('isOpen');
+    } );
+
+    $('.close-icon').click(function() {
         $('.hamburger-menu').removeClass('isOpen');
-        $('.menu-overlay').removeClass('active');
-        $('.menu-trigger').removeClass('active');
     });
+
+
 });
-
-
-
 
 
 

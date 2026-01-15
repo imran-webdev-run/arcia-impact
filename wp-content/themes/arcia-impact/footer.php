@@ -11,11 +11,38 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		
-	<h2>This is Footer</h2>
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<footer id="colophon" class="site-footer layout-padding">
+		<div class="footer-inner">
+			<div class="footer-site-branding">
+
+				<?php if(get_field('footer_logo', 'option')) : ?>
+					<div class="site-branding">
+						<img src="<?php the_field('footer_logo','option'); ?>" alt="footer-logo">
+					</div>
+				<?php endif; ?>
+
+				<p><?php the_field('tagline','option'); ?></p>
+			</div>
+
+			<div class="footer-menu">
+				<?php
+					if( is_active_sidebar( 'footer-menu')){
+						dynamic_sidebar( 'footer-menu' );
+					} 
+				?>
+			</div>
+
+			<div class="footer-contact">
+				<?php
+					if( is_active_sidebar( 'footer-contact')){
+						dynamic_sidebar( 'footer-contact' );
+					} 
+				?>
+			</div>
+		</div>
+	
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 
