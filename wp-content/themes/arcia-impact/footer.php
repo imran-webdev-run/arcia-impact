@@ -40,6 +40,10 @@
 				?>
 			</div>
 		</div>
+
+		<div class="footer-copyright mt-lg-75 mt-md-60 mt-sm-300 mt-30">
+			<p><?php the_field('footer_copyright','option'); ?></p>
+		</div>
 	
 	</footer>
 </div>

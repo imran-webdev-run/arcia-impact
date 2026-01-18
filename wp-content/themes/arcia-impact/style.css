@@ -27,17 +27,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                                 Heade Style Start
 =====================================================================================
 */
-
+.container{
+    max-width: 90rem;
+    width: 100%;
+    margin: 0 auto;
+}
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 4.875rem;
-    padding-right: 5.625rem;
+    padding-left: 78px;
+    padding-right: 90px;
 }
 .site-branding {
-    width: 5.5rem; /* 88px */
-    height: 4.5625rem; /* 73px */
+	width: 5.5rem;
+	height: 4.5625rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
 }
 
 /* main menu */
@@ -45,14 +51,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     margin: 0;
     padding: 0;
     display: flex;
-    column-gap: 1.6875rem;
+    column-gap: 27px;
 }
 .main-menu ul li {
     list-style: none;
 }
 .main-menu ul li a {
     text-decoration: none;
-	padding: 2.375rem 0;
+	padding: 38px 0;
 	display: block;
 	font-weight: 500;
 	line-height: 150%;
@@ -66,9 +72,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     text-decoration: none;
 	color: var(--arica-bg);
     background: var(--arica-primery);
-	padding: .625rem .875rem;
+	padding: 10px 14px;
 	display: block;
-	border-radius: 4px;
+	border-radius: .25rem;
 }
 .header-btn a:hover {
     background: var(--arica-navy);
@@ -81,28 +87,28 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @media only screen and (max-width: 991px){
     .site-header {
         display: flex;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 32px;
+        padding-right: 32px;
     }
     
     /* mobile menu */
     .menu-trigger {
-        width: 2rem;
+        width: 32px;
         height: auto;
         cursor: pointer;
     }
     .close-icon {
-        width: 2rem;
-        height: 2rem;
+        width: 32px;
+        height: 32px;
         position: absolute;
-        right: 2rem;
+        right: 32px;
     }
     .hamburger-menu-inner {
-        width: 28.125rem;
+        width: 450px;
         background: #0A4181;
         position: relative;
-        padding-top: 2rem;
-        margin-right: -9.375rem;
+        padding-top: 32px;
+        margin-right: -150px;
         transition: all .3s ease-in-out;
     }
     .hamburger-menu {
@@ -125,29 +131,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         transition: all .3s ease-in-out;
     }
     .admin-bar .hamburger-menu-inner {
-        margin-top: 2rem;
+        margin-top: 32px;
     }
     .mobile-menu > ul > li > a {
         text-decoration: none;
         display: block;
         color: var(--arica-white);
-        padding: .5rem 1.5rem;
+        padding: 8px 24px;
     }
     
     .mobile-menu > ul {
         margin: 0;
         padding: 0;
         list-style: none;
-        border-bottom: 1px solid #26AAE230;
+        border-bottom: .0625rem solid #26AAE230;
     }
     .close-icon svg {
         color: var(--arica-white);
     }
     .mobile-menu {
-        padding-top: 3rem;
+        padding-top: 48px;
     }
     .mobile-menu > ul li {
-        border-bottom: 1px solid #26AAE245;
+        border-bottom: .0625rem solid #26AAE245;
         transition: all .3s ease-in-out;
     }
     .mobile-menu > ul li:hover {
@@ -155,8 +161,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     }
     .hamburger-footer a {
         display: inline-block;
-        margin-top: 2rem;
-        margin-left: 1.5rem;
+        margin-top: 32px;
+        margin-left: 24px;
     }
     .header-btn.hamburger-footer a:hover {
         background: var(--arica-white);
@@ -168,27 +174,357 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* 
 =====================================================================================
+                                Front Page Style Start
+=====================================================================================
+*/
+
+/* Hero Section */
+
+.hero-section {
+  position: relative;
+}
+.hero-inner {
+    display: grid;
+    grid-template-columns: 100%;
+}
+.hero-image, .hero-content{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hero-image{}
+.hero-content{
+    align-self: center;
+    max-width: 65.0625rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.hero-image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #00000066;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-content h1 {
+    color: var(--arica-white);
+    text-align: center;
+}
+.hero-content p {
+	color: var(--arica-white);
+	text-align: center;
+	margin-bottom: 3rem;
+}
+.hero-btn {
+    background: #1C3F97;
+    color: var(--arica-white);
+}
+.hero-btn:hover {
+    background: var(--arica-primery);
+}
+
+
+/* About Section */
+.about-inner {
+    display: grid;
+    grid-template-columns: 1fr 34.6875rem;
+    column-gap: 3.75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+}
+.about-images-column1 {
+    display: grid;
+    grid-template-rows: 17.5rem 17.5rem 17.5rem;
+    row-gap: 1.25rem;
+}
+.about-images-column1 .about-image:nth-child(1) {
+    grid-row: span 2;
+}
+.about-images-column2 {
+	display: grid;
+	grid-template-rows: 17.5rem 17.5rem 17.5rem;
+	row-gap: 1.25rem;
+	position: relative;
+	top: 7rem;
+}
+.about-images-column2 .about-image:nth-child(2) {
+    grid-row: span 2;
+}
+.about-content {
+	margin-top: 7rem;
+}
+
+.section-sub-title {
+	color: var(--arica-primery);
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: normal;
+	display: flex;
+	margin-bottom: 1.5rem;
+}
+.services-inner .section-sub-title {
+	justify-content: center;
+}
+.section-sub-title svg {
+	margin-right: 1rem;
+	max-width: 4.625rem;
+	flex: 0 0 4.625rem;
+}
+.section-title h2 {
+    color: var(--arica-navy);
+}
+
+
+@media only screen and (max-width: 991px){
+    .about-images {
+        order: 2;
+    }
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+    .about-content {
+        margin-top: 0;
+        margin-bottom: 3.125rem;
+
+    }
+}
+@media only screen and (max-width: 500px){
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+    .about-content {
+        margin-bottom: 3.125rem;
+    }
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+
+    .about-images-column2 {
+        top: 1rem;
+    }
+}
+
+
+
+/* Service Style Start */
+.services {
+	background: var(--arica-bg);
+}
+.services-inner .section-title {
+	text-align: center;
+}
+.services-inner {
+	text-align: center;
+}
+.service-boxes {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 20px;
+	row-gap: 40px;
+}
+.service {
+	display: grid;
+	grid-template-columns: 100%;
+	position: relative;
+}
+a.service-post {
+	text-decoration: none;
+}
+.post-thumb {
+    grid-column: 1;
+	grid-row: 1;
+}
+.service-post {
+    display: inline-block;
+}
+.service h3 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin-bottom: 2.5rem;
+    color: var(--arica-white);
+    position: relative;
+    z-index: 50;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: .3s all ease-in-out;
+}
+.service:hover h3 {
+	transform: translateY(-9.25rem);
+}
+.post-thumb::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+}
+
+@media only screen and (max-width: 991px){
+    .service-boxes {
+        grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media only screen and (max-width: 767px){
+    .service-boxes {
+        grid-template-columns: repeat(2, 1fr);
+}
+}
+@media only screen and (max-width: 500px){
+    .service-boxes {
+        grid-template-columns: repeat(1, 1fr);
+}
+}
+
+
+/* Testimonials */
+.testimonials-inner {
+    display: grid;
+    grid-template-columns: 100%;
+}
+.testimonials-bg {
+    grid-column: 1;
+    grid-row: 1;
+}
+.testimonials-content {
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+}
+.testimonials-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.testimonials-content-inner {
+    grid-column: 2/3;
+}
+.testimonials-content-inner .section-title h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 130%;
+    color: var(--arica-white);
+}
+.testimonials-content-inner .section-description {
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--arica-white);
+}
+.testimonial-client-profile {
+    padding-top: 2.875rem;
+}
+.testimonial-client-profile span {
+    font-size: 1.5rem;
+    color: var(--arica-white);
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 1.75rem;
+    display: block;
+}
+.testimonial-client-profile .profile-iner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.testimonial-client-profile .profile-images {
+    display: flex;
+    column-gap: 1rem;
+    }
+.testimonial-client-profile .profile-image {
+	width: 4.4375rem;
+	height: 4.5rem;
+}
+.testimonial-button a {
+	color: var(--arica-navy);
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 100%;
+	cursor: pointer;
+}
+.testimonial-button {
+    display: flex;
+    align-items: center;
+    color: var(--arica-navy);
+}
+
+@media only screen and (max-width: 991px){
+    .testimonials-content-inner .section-title h2 {
+	font-size: 3rem;
+}
+}
+
+@media only screen and (max-width: 767px){
+    .testimonials-content-inner {
+        grid-column: 1/3;
+}
+}
+@media only screen and (max-width: 500px){
+    .testimonials-bg::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #0009;
+        position: absolute;
+        z-index: 2;
+}
+    .testimonials-bg {
+        position: relative;
+}
+    .testimonials-content {
+        position: relative;
+        z-index: 3;
+}
+    .testimonial-client-profile .profile-iner {
+        flex-direction: column;
+        row-gap: 1rem;
+        align-items: start;
+}
+}
+
+
+
+
+
+/* 
+=====================================================================================
                                 Footer Style Start
 =====================================================================================
 */
 
 footer {
     background: #0F0F0F;
-    padding-top: 3.5625rem;
-    padding-bottom: 4.9375rem;
+    padding-top: 57px;
+    padding-bottom: 79px;
 }
 .footer-inner {
 	display: flex;
 	justify-content: center;
-	column-gap: 9.6875rem;
+	column-gap: 155px;
 }
 .footer-site-branding {
-	width: 10.6875rem;
+	width: 171px;
 }
 .footer-site-branding p {
 	color: var(--arica-white);
-	font-size: .875rem;
-	padding-top: .6875rem;
+	font-size: 14px;
+	padding-top: 11px;
 }
 .footer-menu ul {
 	list-style: none;
@@ -197,7 +533,7 @@ footer {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-rows: repeat(5, auto);
-	column-gap: 5rem;
+	column-gap: 80px;
 }
 .footer-contact p {
 	color: var(--arica-white);
@@ -213,13 +549,13 @@ footer {
 .footer-menu h4, 
 .footer-contact h4 {
 	color: var(--arica-white);
-	margin-bottom: 1.25rem;
+	margin-bottom: 20px;
 }
 
 .footer-menu ul li a {
 	text-decoration: none;
 	color: var(--arica-white);
-	padding: .5rem 0;
+	padding: 8px 0;
 	display: block;
 	transition: all .3s ease-in-out;
 	font-weight: 400;
@@ -231,28 +567,34 @@ footer {
 	color: var(--arica-white);
 }
 .footer-contact .textwidget p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
+}
+.footer-copyright p {
+	color: var(--arica-bg);
+	font-size: .875rem;
+	font-weight: 400;
+	text-align: center;
 }
 
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 61.9375rem) {
 
    .footer-inner {
-	column-gap: 3rem;
+	column-gap: 48px;
 }
 .footer-menu ul {
-	column-gap: 2rem;
+	column-gap: 32px;
 }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 47.9375rem) {
 
    .footer-inner {
 	display: flex;
 	justify-content: center;
-	column-gap: 9.6875rem;
+	column-gap: 155px;
 	flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 32px;
 }
 .footer-menu ul {
     grid-auto-flow: row;
