@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer layout-padding">
+	<footer id="colophon" class="site-footer layout-padding pt-lg-75 pt-md-60 pt-sm-50 pt-50 pb-lg-80 pb-md-60 pb-sm-50 pb-50">
 		<div class="footer-inner">
 			<div class="footer-site-branding">
 

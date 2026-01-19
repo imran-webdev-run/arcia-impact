@@ -41,8 +41,8 @@ get_header(); while(have_posts())  : the_post(); ?>
 
 
     <!-- About Section Start -->
-     <section class="about-us-section layout-padding pt-lg-135 pt-md-80 pt-sm-80 pt-50 pb-md-165 pb-sm-130 pb-150">
-        <div class="about-inner container">
+     <section class="about-us-section container layout-padding pt-lg-135 pt-md-80 pt-sm-80 pt-50 pb-md-165 pb-sm-130 pb-150">
+        <div class="about-inner">
 
             <div class="about-images mb-lg-110">
 
@@ -113,8 +113,8 @@ get_header(); while(have_posts())  : the_post(); ?>
 
 
     <!-- Services Section Start -->
-     <section class="layout-padding services pt-lg-95 pt-md-50 pt-sm-50 pt-50 pb-lg-95 pb-md-50 pb-sm-50 pb-50">
-        <div class="services-inner container">
+     <section class=" services pt-lg-95 pt-md-50 pt-sm-50 pt-50 pb-lg-95 pb-md-50 pb-sm-50 pb-50">
+        <div class="services-inner container layout-padding">
             <div class="section-top">
                 <div class="section-sub-title">
                     <svg xmlns="http://www.w3.org/2000/svg" width="71" height="10" viewBox="0 0 71 10" fill="currentColor">
@@ -242,9 +242,137 @@ get_header(); while(have_posts())  : the_post(); ?>
             </div>
         </div>
     </section>
-
-
     <!-- Testimonials Section End -->
+
+
+    <!-- Contact Section Start -->
+     <section class="container contact-us layout-padding pt-lg-105 pt-md-80 pt-sm-50 pt-50 pb-lg-135 pb-md-100 pb-sm-80 pb-60">
+        <div class="contact-inner">
+            <div class="contact-content">
+                <div class="contact-bg media">
+                    <?php 
+                    $ContactLocation = get_field('contac_location_map') ; 
+                    
+                    ?>
+                  
+                        <?php echo ( $ContactLocation ); ?>
+                    
+                </div>
+            </div>
+            <div class="contact-details">
+                <div class="contact-form">
+                    <form action="">
+                        <div class="field-group">
+                            <div class="input-field">
+                                <label for="Name">Name</label>
+                                <input type="text" id="name">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="Company">Company</label>
+                                <input type="text" id="company">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="Phone">Phone</label>
+                                <input type="text" id="phone">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="Adress">Adress</label>
+                                <input type="text" id="adress">
+                            </div>
+                        </div>
+                        <div class="text-aria">
+                            <label for="Message">Message</label>
+                            <textarea name="Message" id="message"></textarea>
+                        </div>
+                        <div class="contact-button">
+                            <button type="submit" class="contact-form-btn">Submit</button>
+                        </div>
+                    </form>
+
+                    <div class="contact-info-wrapper">
+                        <div class="contact-content-inner">
+                            <div class="section-sub-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="71" height="10" viewBox="0 0 71 10" fill="currentColor">
+                                    <line x1="28" y1="1" x2="71" y2="1" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="-8.74228e-08" y1="9" x2="71" y2="8.99999" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                
+                                <?php if(get_field('contact_section_sub_hading')) : ?>
+                                    <span><?php the_field('contact_section_sub_hading'); ?></span>
+                                <?php endif; ?>
+                            </div>
+                
+                            <div class="section-title">
+                                <?php if(get_field('contact_headding')) : ?>
+                                    <h2><?php the_field('contact_headding'); ?></h2>
+                                <?php endif; ?>
+                            </div>
+                
+                            <div class="section-description">
+                                <?php if(get_field('contact_section_description')) : ?>
+                                    <p><?php the_field('contact_section_description'); ?></p>
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="testimonial-client-profile">
+                                <?php if(get_field('office_time')) : ?>    
+                                    <span> <?php the_field('office_time'); ?></span>
+                                <?php endif; ?>
+
+                                <div class="profile-iner">
+
+                                    <div class="profile-images">
+                                    <?php if( have_rows('office_time_settings')) : ?>
+                                    <?php while( have_rows('office_time_settings')) : the_row(''); ?>
+                                        <div class="profile-image media">
+
+                                            <?php if(get_sub_field('time')) : ?>
+                                                <span><?php the_sub_field('name_of_the_days'); ?></span>
+                                                <span><?php the_sub_field('time'); ?></span>
+                                            <?php endif; ?>
+
+                                        </div>
+                                        <?php endwhile; else: endif; ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
+            <div class="contact-footer">
+                    <?php if(have_rows('contact_us_section')) : ?>
+                    <?php while(have_rows('contact_us_section')) : the_row('contact_us_section'); ?>
+                        <div class="contact-info">
+                            <div class="contact-inner-icon media">
+                                <?php if(get_sub_field('contact_inner_icon')) : ?>
+                                    <img src="<?php the_sub_field('contact_inner_icon'); ?>"  alt="">
+                                <?php endif; ?>
+                            </div>
+                            <div class="contact-footer-content">
+                                <?php if(get_sub_field('contact_inner_title')) : ?>
+                                    <h4><?php the_sub_field('contact_inner_title'); ?></h4>
+                                <?php endif; ?>
+
+                                <?php if(get_sub_field('contact_inner_description')) : ?>
+                                    <?php the_sub_field('contact_inner_description'); ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endwhile; else: endif; ?>
+                </div>
+        </div>
+
+     </section>
+    <!-- Contact Section End -->
      
 
 

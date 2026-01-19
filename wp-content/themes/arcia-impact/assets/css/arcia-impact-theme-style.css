@@ -236,8 +236,8 @@ h6,.h6-style {
 @media only screen and (min-width: 1200px) {
 
 	.layout-padding{
-        padding-left: 2rem; /* 32px */
-        padding-right: 2rem; /* 32px */
+        padding-left: 5rem; /* 80px */
+        padding-right: 5rem; /* 80px */
     }
 	.layout-margin{
         margin-left: 2rem; /* 32px */
@@ -247,8 +247,8 @@ h6,.h6-style {
 
 @media only screen and (min-width: 1600px) {
 	.layout-padding{
-        padding-left: 5rem; /* 50px */
-        padding-right: 5rem; /* 50px */
+        padding-left: 5rem; /* 80px */
+        padding-right: 5rem; /* 80px */
     }
 	.layout-margin{
         margin-left: 3.125rem; /* 50px */
